@@ -1,17 +1,45 @@
-.bottom_indicator{
+.swiper {
+  flex: 1;
+}
+
+.swiper-item {
+  width: 100%;
+  height: 100%;
+
+}
+
+.container {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+  background: #000;
+}
+
+.bottom_indicator {
   background: #fff;
   border-radius: 5prx;
-  width: 100%;
-  height: 20rpx;
+  width: 20%;
+  height: 5rpx;
 }
+
+.tab_text {
+  width: 100%;
+  padding: 10rpx;
+  text-align: center;
+  font-size: 40rpx;
+}
+
 .tab-bar {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 48px;
-  background: white;
   display: flex;
+  align-items: stretch;
   padding-bottom: env(safe-area-inset-bottom);
 }
 
@@ -27,9 +55,11 @@
 
 .tab-bar-item {
   flex: 1;
-  text-align: center;
   display: flex;
-  justify-content: center;
+  width: 25%;
+  padding-top: 10rpx;
+  justify-content: flex-end;
+  align-content: center;
   align-items: center;
   flex-direction: column;
 }

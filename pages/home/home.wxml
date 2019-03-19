@@ -1,0 +1,17 @@
+<!--miniprogram/custom-tab-bar/index.wxml-->
+<view class='container'>
+  <swiper class='swiper'>
+    <swiper-item>
+      <recommend-component class='swiper-item' bindcustomevent="pageEventListener1"/>
+    </swiper-item>
+
+  </swiper>
+  <cover-view class="tab-bar">
+    <cover-view class="tab-bar-border"></cover-view>
+    <cover-view wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab">
+      <cover-view class='tab_text' style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</cover-view>
+      <cover-view class='bottom_indicator' hidden='{{selected != index}}'></cover-view>
+    </cover-view>
+  </cover-view>
+
+</view>

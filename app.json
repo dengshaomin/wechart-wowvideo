@@ -1,29 +1,10 @@
 {
   "pages": [
-    "recommend-tab/recommend-tab",  
-    "attention-tab/attention-tab",
+    "pages/home/home",
     "pages/recommend/recommend",
     "pages/logs/logs",
     "pages/flex/flex"
-    
   ],
-  "tabBar": {
-    "custom": true,
-    "color": "#7A7E83",
-    "selectedColor": "#3cc51f",
-    "borderStyle": "black",
-    "backgroundColor": "#ffffff",
-    "list": [
-      {
-        "pagePath": "recommend-tab/recommend-tab",
-        "text": "组件"
-      },
-      {
-        "pagePath": "attention-tab/attention-tab",
-        "text": "接口"
-      }
-    ]
-  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#00000000",

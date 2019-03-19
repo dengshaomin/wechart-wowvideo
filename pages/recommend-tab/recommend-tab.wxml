@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view class="container">
+  <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" skip-hidden-item-layout="{{true}}" bindchange='swiperChange'>
+    <block wx:for="{{videoUrls}}">
+      <swiper-item>
+        <video class='slide_image' id='{{item.id}}' src="{{item.url}}" controls='{{false}}' autoplay='{{item.autoplay}}' show-center-play-btn='{{false}}' enable-progress-gesture='{{false}}' bindtap='videoSignalTab' bindplay='videoPlay' bindpause='videoPause'/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <image wx:if='{{!isplaying}}' class='center_play_control ' src='../../res/icon_play.png ' mode='aspectFit ' bindtap='videoSignalTab' />
+</view>
