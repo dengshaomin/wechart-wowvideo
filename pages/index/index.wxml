@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+  <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" skip-hidden-item-layout="{{true}}" bindchange='swiperChange'>
+    <block wx:for="{{videoUrls}}" >
+      <swiper-item>
+        <video class='slide_image' id='{{item.id}}' src="{{item.url}}" controls='{{false}}' autoplay='{{item.autoplay}}' show-center-play-btn='{{false}}' custom-cache="{{false}}"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
