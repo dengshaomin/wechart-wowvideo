@@ -1,0 +1,14 @@
+/* pages/flex/flex.wxss */
+
+.item {
+  position: absolute;
+  width: 200rpx;
+  height: 200rpx;
+  margin: 30rpx;
+}
+.item1 {
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  margin: 30rpx;
+}

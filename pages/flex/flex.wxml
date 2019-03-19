@@ -1,0 +1,5 @@
+<!--pages/flex/flex.wxml-->
+<view class='root'>
+  <view class='item' style='background-color:#ffee00' />
+  <view class='item1' style='background-color:#ff1100' />
+</view>
