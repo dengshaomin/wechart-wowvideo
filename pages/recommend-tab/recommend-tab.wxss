@@ -1,20 +1,31 @@
 /**index.wxss**/
 
-.container {
+.root_container {
   display: flex;
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #fff;
+}
+
+.video_container {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   justify-content: center;
-  align-items: center;
 }
 
 .swiper {
   position: absolute;
   width: 100%;
   height: 100%;
-  
+}
+
+.swiper-item {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .slide_image {
@@ -27,8 +38,95 @@
   position: absolute;
   width: 100rpx;
   height: 100rpx;
-  
- 
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
- 
+.v_tool {
+  position: absolute;
+  margin-top: 200rpx;
+  padding: 20rpx;
+  flex-direction: column;
+  margin: auto;
+  right: 0;
+  bottom: 200rpx;
+}
+
+.h_bottom_info {
+  display: flex;
+  width: 70%;
+  padding-left: 20rpx;
+  position: absolute;
+  align-self: flex-end;
+  padding-bottom: 100rpx;
+  flex-direction: column;
+}
+
+.h_bottom_name {
+  color: white;
+  font-size: 40rpx;
+  font-weight: bold;
+  padding-top: 20rpx;
+  padding-bottom: 15rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.h_bottom_des {
+  display: -webkit-box;
+  color: white;
+  font-size: 40rpx;
+  -webkit-line-clamp: 3;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.v_tool_icon {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.v_tool_user_icon {
+  width: 80rpx;
+  height: 80rpx;
+  border-width: 5prx;
+  background: white;
+  border-radius: 82rpx;
+  border: 0 solid #fe0;
+  margin-bottom: 50rpx;
+}
+
+.v_tool_item {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  padding-bottom: 10rpx;
+  border: 0;
+
+}
+.v_tool_item::after{
+   border: none;
+}
+
+.v_tool_item_share {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  padding-bottom: 50rpx;
+}
+
+.v_tool_text {
+  font-size: 25rpx;
+  color: white;
+}

@@ -6,7 +6,8 @@
     "pages/flex/flex"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
+    "backgroundColor" :"#000000",
     "navigationBarBackgroundColor": "#00000000",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "white",

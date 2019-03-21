@@ -105,5 +105,18 @@ Page({
     setTimeout(function() {
       wx.stopPullDownRefresh();
     }, 2000);
-  }
+  },
+  iconClick: function () {
+    
+  },
+  likeClick: function () {
+    
+  },
+  commentClick: function () {
+    
+  },
+  shareClick: function () {
+    this.triggerEvent('shareevent', {}) 
+  },
+  
 })

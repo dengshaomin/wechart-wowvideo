@@ -38,7 +38,7 @@ Component({
    */
   methods: {
     swiperChange: function(e) {
-      var videoContext = wx.createVideoContext(this.data.playindex + "",this);
+      var videoContext = wx.createVideoContext(this.data.playindex + "", this);
       videoContext.pause();
       videoContext.seek(0);
       videoContext = wx.createVideoContext(e.detail.current + "");
@@ -51,14 +51,16 @@ Component({
       });
     },
     videoSignalTab: function(e) {
-      this.triggerEvent('customevent', {}, { bubbles: true })
+      this.triggerEvent('customevent', {}, {
+        bubbles: true
+      })
 
-      var videoContext = wx.createVideoContext(this.data.playindex + "",this);
+      var videoContext = wx.createVideoContext(this.data.playindex + "", this);
 
       if (this.data.isplaying) {
         videoContext.pause();
       } else {
-      
+
         videoContext.play();
       }
     },
@@ -78,7 +80,20 @@ Component({
       setTimeout(function() {
         wx.stopPullDownRefresh();
       }, 2000);
-    }
+    },
+    iconClick: function() {
+
+    },
+    likeClick: function() {
+
+    },
+    commentClick: function() {
+
+    },
+    shareClick: function() {
+      
+      this.triggerEvent('customevent', {})
+    },
   },
 
 })

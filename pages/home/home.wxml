@@ -1,8 +1,8 @@
 <!--miniprogram/custom-tab-bar/index.wxml-->
 <view class='container'>
   <swiper class='swiper'>
-    <swiper-item>
-      <recommend-component class='swiper-item' bindcustomevent="pageEventListener1"/>
+    <swiper-item catchtouchmove="disableTabMove">
+      <recommend-component class='swiper-item' bindcustomevent="onShareAppMessage" />
     </swiper-item>
 
   </swiper>

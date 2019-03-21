@@ -1,5 +1,11 @@
 {
   "usingComponents": {
     "recommend-component" :"../recommend-tab/recommend-tab"
-  }
+  },
+  "backgroundTextStyle": "dark",
+  "navigationBarTitleText": "WeChat",
+  "navigationBarTextStyle": "white",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": true
+
 }

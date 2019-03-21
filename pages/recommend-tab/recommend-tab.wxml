@@ -1,12 +1,38 @@
 <!--index.wxml-->
-<view class="container">
+<view class='root_container'>
+
   <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" skip-hidden-item-layout="{{true}}" bindchange='swiperChange'>
     <block wx:for="{{videoUrls}}">
-      <swiper-item>
-        <video class='slide_image' id='{{item.id}}' src="{{item.url}}" controls='{{false}}' autoplay='{{item.autoplay}}' show-center-play-btn='{{false}}' enable-progress-gesture='{{false}}' bindtap='videoSignalTab' bindplay='videoPlay' bindpause='videoPause'/>
+      <swiper-item class='swiper-item'>
+
+        <video class='slide_image' id='{{item.id}}' src="{{item.url}}" controls='{{false}}' autoplay='{{item.autoplay}}' show-center-play-btn='{{false}}' enable-progress-gesture='{{false}}' bindtap='videoSignalTab' bindplay='videoPlay' bindpause='videoPause'
+        />
+        <image wx:if='{{!isplaying}}' class='center_play_control ' src='../../res/icon_play.png ' mode='aspectFit ' bindtap='videoSignalTab' />
+
+        <view class='v_tool'>
+
+          <button class='v_tool_user_icon' src=' ' bindtap='iconClick'></button>
+
+          <button class='v_tool_item' bindtap='likeClick'>
+            <image class='v_tool_icon' src='../../res/icon_like.png'></image>
+            <text class='v_tool_text'>1234</text>
+          </button>
+          <button class='v_tool_item' bindtap='commentClick'>
+            <image class='v_tool_icon' src='../../res/icon_comment.png'></image>
+            <text class='v_tool_text'>1234</text>
+          </button>
+
+          <button class='v_tool_item_share' open-type="share">
+            <image class='v_tool_icon' src='../../res/icon_share.png'></image>
+            <text class='v_tool_text'>1234</text>
+          </button>
+        </view>
+        <view class='h_bottom_info'>
+          <text class='h_bottom_name' bindtap=' iconClick '>@name</text>
+          <text class='h_bottom_des'>@des</text>
+        </view>
       </swiper-item>
     </block>
   </swiper>
 
-  <image wx:if='{{!isplaying}}' class='center_play_control ' src='../../res/icon_play.png ' mode='aspectFit ' bindtap='videoSignalTab' />
 </view>
