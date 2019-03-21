@@ -2,7 +2,7 @@
 <view class='container'>
   <swiper class='swiper'>
     <swiper-item catchtouchmove="disableTabMove">
-      <recommend-component class='swiper-item' bindcustomevent="onShareAppMessage" />
+      <recommend-component class='swiper-item' id='recommendtab' bindcommentclick='commentclick' bindcustomevent="customevent" />
     </swiper-item>
 
   </swiper>
@@ -13,5 +13,7 @@
       <cover-view class='bottom_indicator' hidden='{{selected != index}}'></cover-view>
     </cover-view>
   </cover-view>
-
+  <view>
+    <view class='comment_list' wx:if='{{!commentAttach}}' animation="{{animation}}" bindtap='commentlistclick'></view>
+  </view>
 </view>

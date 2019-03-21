@@ -73,3 +73,11 @@
 .tab-bar-item cover-view {
   font-size: 10px;
 }
+.comment_list {
+  display: flex;
+  position: absolute;
+  align-self: flex-end;
+  width: 100%;
+  height: 70%;
+  background: white;
+}

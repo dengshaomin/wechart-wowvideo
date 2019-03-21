@@ -5,6 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+
+    commentAttach: false,
     selected: 0,
     color: "#7e7e7e",
     selectedColor: "#fff",
@@ -38,7 +40,8 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    this.animation = wx.createAnimation()
+    this.recommendtab = this.selectComponent("#recommendtab"); //组件的id
   },
 
   /**
@@ -110,5 +113,51 @@ Page({
   },
   disableTabMove: function(e) {
     return false;
+  },
+
+  commentclick: function(e) {
+    if (this.data.commentAttach) {
+      this.hidecommentlist()
+      return;
+    }
+    console.log('hide')
+    wx.hideShareMenu()
+    var item = wx.createSelectorQuery();
+    var that = this;
+    item.select('.comment_list').boundingClientRect() //里面需要绑定 view组件的id
+    item.exec(function(res) { //res为绑定元素信息的数组
+      that.animation.translateY(-res[0].height).step()
+      that.setData({
+        animation: that.animation.export(),
+      })
+      that.data.commentAttach = true;
+    })
+    let id = e.detail.id
+    if (id != null) {
+      console.log('nnnnn')
+      wx.request({
+        url: '',
+      })
+    }
+  },
+  commentlistclick: function(e) {
+    this.hidecommentlist()
+  },
+  hidecommentlist: function(e) {
+    wx.showShareMenu()
+    var item = wx.createSelectorQuery();
+    var that = this;
+    item.select('.comment_list').boundingClientRect() //里面需要绑定 view组件的id
+    item.exec(function(res) { //res为绑定元素信息的数组
+      that.animation.translateY(res[0].height).step()
+      that.setData({
+        animation: that.animation.export(),
+
+      })
+      that.data.commentAttach = false;
+    })
+
+    this.recommendtab.hidecommentlist()
   }
+
 })

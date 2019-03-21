@@ -110,10 +110,10 @@
   background: transparent;
   padding-bottom: 10rpx;
   border: 0;
-
 }
-.v_tool_item::after{
-   border: none;
+
+.v_tool_item::after {
+  border: none;
 }
 
 .v_tool_item_share {
@@ -130,3 +130,5 @@
   font-size: 25rpx;
   color: white;
 }
+
+

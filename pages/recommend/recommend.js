@@ -6,19 +6,22 @@ Page({
   data: {
     playindex: 0,
     isplaying: false,
-    videoUrls: [{
-      id: 0,
-      url: 'https://wechart-miniprogram-res.oss-cn-shanghai.aliyuncs.com/shortvideo/videos/171c527fadf5278aa566496b86d26048.mp4?OSSAccessKeyId=LTAINaTr6dvDeEfe&Expires=1553000721&Signature=2NCqn5M9lgjF8lgeol6CDKvBItw%3D',
-      autoplay: false
-    }, {
-      id: 1,
-      url: 'https://wechart-miniprogram-res.oss-cn-shanghai.aliyuncs.com/shortvideo/videos/1bc0d0764f92786699cc416d9f8d7ef.mp4?OSSAccessKeyId=LTAINaTr6dvDeEfe&Expires=1553000743&Signature=S4wrAFbs5anxIyCCWeTATM%2B%2F4r8%3D',
-      autoplay: false
-    }, {
-      id: 2,
-      url: 'https://wechart-miniprogram-res.oss-cn-shanghai.aliyuncs.com/shortvideo/videos/2d4625f6155ff7187c366280d6abcda6.mp4?OSSAccessKeyId=LTAINaTr6dvDeEfe&Expires=1553000755&Signature=SUJT6%2FmCecSifm99uriL%2BRdL6%2F4%3D',
-      autoplay: false
-    }],
+    videoBean: {
+      videoUrls: [{
+        id: 0,
+        url: 'https://wechart-miniprogram-res.oss-cn-shanghai.aliyuncs.com/shortvideo/videos/171c527fadf5278aa566496b86d26048.mp4?OSSAccessKeyId=LTAINaTr6dvDeEfe&Expires=1553000721&Signature=2NCqn5M9lgjF8lgeol6CDKvBItw%3D',
+        autoplay: false
+      }, {
+        id: 1,
+        url: 'https://wechart-miniprogram-res.oss-cn-shanghai.aliyuncs.com/shortvideo/videos/1bc0d0764f92786699cc416d9f8d7ef.mp4?OSSAccessKeyId=LTAINaTr6dvDeEfe&Expires=1553000743&Signature=S4wrAFbs5anxIyCCWeTATM%2B%2F4r8%3D',
+        autoplay: false
+      }, {
+        id: 2,
+        url: 'https://wechart-miniprogram-res.oss-cn-shanghai.aliyuncs.com/shortvideo/videos/2d4625f6155ff7187c366280d6abcda6.mp4?OSSAccessKeyId=LTAINaTr6dvDeEfe&Expires=1553000755&Signature=SUJT6%2FmCecSifm99uriL%2BRdL6%2F4%3D',
+        autoplay: false
+      }]
+    },
+
     indicatorDots: false,
     autoplay: false,
     interval: 5000,
@@ -106,17 +109,17 @@ Page({
       wx.stopPullDownRefresh();
     }, 2000);
   },
-  iconClick: function () {
-    
+  iconClick: function() {
+
   },
-  likeClick: function () {
-    
+  likeClick: function() {
+
   },
-  commentClick: function () {
-    
+  commentClick: function() {
+
   },
-  shareClick: function () {
-    this.triggerEvent('shareevent', {}) 
+  shareClick: function() {
+    this.triggerEvent('shareevent', {})
   },
-  
+
 })
