@@ -35,7 +35,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    enablePullDownRefresh:false
   },
   onShow: function(e) {
     console.log(e)

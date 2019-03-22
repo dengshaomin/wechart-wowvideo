@@ -124,7 +124,7 @@
   align-items: center;
   background: transparent;
   padding-bottom: 50rpx;
-}
+  }
 
 .v_tool_text {
   font-size: 25rpx;

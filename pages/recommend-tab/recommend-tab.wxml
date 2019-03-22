@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class='root_container'>
 
-  <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" skip-hidden-item-layout="{{true}}" bindchange='swiperChange'>
+  <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"  bindchange='swiperChange'>
     <block wx:for="{{videoBean.videoUrls}}">
       <swiper-item class='swiper-item'>
 

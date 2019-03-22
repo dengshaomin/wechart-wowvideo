@@ -1,11 +1,10 @@
 .swiper {
-  flex:1;
+  flex: 1;
 }
 
 .swiper-item {
   width: 100%;
   height: 100%;
-
 }
 
 .container {
@@ -14,8 +13,6 @@
   width: 100%;
   height: 100%;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: stretch;
   background: #000;
 }
 
@@ -34,14 +31,13 @@
 }
 
 .tab-bar {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
+  margin: auto;
   display: flex;
   align-items: stretch;
-  
-  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .tab-bar-border {
@@ -73,11 +69,39 @@
 .tab-bar-item cover-view {
   font-size: 10px;
 }
+
+.comment_list_container {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  background: transparent;
+}
+
 .comment_list {
   display: flex;
   position: absolute;
-  align-self: flex-end;
+  flex-direction: column;
   width: 100%;
   height: 70%;
+  margin: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background: white;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+}
+
+.comment_list_title {
+  position: absolute;
+  padding: 20rpx;
+  font-size: 30rpx;
+  align-self: center;
+  text-align: center;
+  width: 80%;
 }
