@@ -1,12 +1,13 @@
 <!--index.wxml-->
 <view class='tab_container'>
 
-  <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange='swiperChange' bindtransition='bindtransition' bindanimationfinish='bindanimationfinish'>
+  <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange='swiperChange' bindtransition='bindtransition' bindanimationfinish='bindanimationfinish'
+    skip-hidden-item-layout='true'>
     <block wx:for="{{videobean.videourls}}">
       <swiper-item class='swiper-item'>
 
-        <video class='slide_image' id='{{item.id}}' data-id='{{item.id}}' src="{{item.url}}" controls='{{false}}' autoplay='{{item.autoplay}}' show-center-play-btn='{{false}}' enable-progress-gesture='{{false}}' bindtap='videoSignalTab'  bindpause='bindpause' bindplay="bindplay"
-        />
+        <video class='slide_image' id='{{item.id}}' data-id='{{item.id}}' src="{{item.url}}" controls='{{false}}' autoplay='{{item.autoplay}}' show-center-play-btn='{{false}}' enable-progress-gesture='{{false}}' bindtap='videoSignalTab' bindpause='bindpause'
+          bindplay="bindplay" />
         <image wx:if='{{!item.isplaying}}' class='slide_image' src='{{item.cover}}' />
       </swiper-item>
     </block>
@@ -18,21 +19,24 @@
     <view class='v_tool'>
 
       <button class='v_tool_item' bindtap='iconclick'>
-        <image class='v_tool_user_icon' src='{{videobean.usericon}}' />
+        <image class='v_tool_user_icon' src='{{videobean.videourls[playindex].usericon}}' />
       </button>
 
-      <button class='v_tool_item' bindtap='likeClick'>
-        <image class='v_tool_icon' src="{{videobean.liked ==1 ? '../../res/icon_liked.png': '../../res/icon_like.png'}}"></image>
-        <text class='v_tool_text '>{{videobean.likecount}}</text>
+      <button class='v_tool_item' bindtap='likeclick'>
+        <image class='v_tool_icon' src="{{videobean.videourls[playindex].liked ==1 ? '../../res/icon_liked.png': '../../res/icon_like.png'}}"></image>
+        <text class='v_tool_text '>{{videobean.videourls[playindex].likecount}}</text>
       </button>
-      <button class='v_tool_item ' id='video-comment' bindtap='commentclick' data-id='{{item.id}}'>
+      <button class='v_tool_item' wx:if='{{false}}' id='video-comment' bindtap='commentclick' data-id='{{item.id}}'>
         <image class='v_tool_icon ' src='../../res/icon_comment.png '></image>
-        <text class='v_tool_text '>{{videobean.commentcount}}</text>
+        <text class='v_tool_text '>{{videobean.videourls[playindex].commentcount}}</text>
       </button>
-
+      <button class='v_tool_item' bindtap='attentionclick'>
+        <image class='v_tool_icon' src="{{videobean.videourls[playindex].attentioned ==1 ? '../../res/icon_attentioned.png': '../../res/icon_attention.png'}}"></image>
+        <text class='v_tool_text '>{{videobean.videourls[playindex].attentioncount}}</text>
+      </button>
       <button class='v_tool_item ' open-type="share">
         <image class='v_tool_icon ' src='../../res/icon_share.png '></image>
-        <text class='v_tool_text '>{{videobean.sharecount}}</text>
+        <text class='v_tool_text '>{{videobean.videourls[playindex].sharecount}}</text>
       </button>
     </view>
     <view class='h_bottom_info '>

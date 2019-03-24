@@ -1,6 +1,5 @@
 /**index.wxss**/
 
-
 .video_container {
   display: flex;
   position: absolute;

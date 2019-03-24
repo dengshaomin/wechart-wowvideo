@@ -26,27 +26,42 @@ Page({
 
       text: "我的"
     }],
-
+    
     videobean: {
-      liked: 0,
-      commentcount: 0,
-      likecount: 0,
-      sharecount: 0,
-
-      usericon: 'https://wechart-miniprogram-res-static.oss-cn-shanghai.aliyuncs.com/shortvideo/authoricons/11405dc79ed482afcef1a8961d1aa760.jpeg',
       videourls: [{
+        liked: 0,
+        commentcount: 0,
+        likecount: 0,
+        sharecount: 0,
+        attentioncount: 0,
+        attentioned: 0,
+        usericon: 'https://wechart-miniprogram-res-static.oss-cn-shanghai.aliyuncs.com/shortvideo/authoricons/11405dc79ed482afcef1a8961d1aa760.jpeg',
         id: 0,
         cover: 'https://wechart-miniprogram-res-static.oss-cn-shanghai.aliyuncs.com/shortvideo/covers/1062a948f5328771ec981bde1183c5a.jpeg',
         url: 'http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400',
-        autoplay: true,
-        isplaying: true,
+        autoplay: false,
+        isplaying: false,
       }, {
+        liked: 0,
+        commentcount: 0,
+        likecount: 0,
+        sharecount: 0,
+        attentioncount: 0,
+        attentioned: 0,
+        usericon: 'https://wechart-miniprogram-res-static.oss-cn-shanghai.aliyuncs.com/shortvideo/authoricons/11405dc79ed482afcef1a8961d1aa760.jpeg',
         id: 1,
         cover: 'https://wechart-miniprogram-res-static.oss-cn-shanghai.aliyuncs.com/shortvideo/covers/1062a948f5328771ec981bde1183c5a.jpeg',
         url: 'https://wechart-miniprogram-res.oss-cn-shanghai.aliyuncs.com/shortvideo/videos/575de9b288ce3eecfc2344617314f17.mp4?OSSAccessKeyId=LTAINaTr6dvDeEfe&Expires=1553439594&Signature=dOa3VQTcUMkpgjjCdt8J%2B0nZ4yA%3D',
         autoplay: false,
         isplaying: false,
       }, {
+        liked: 0,
+        commentcount: 0,
+        likecount: 0,
+        sharecount: 0,
+        attentioncount: 0,
+        attentioned: 0,
+        usericon: 'https://wechart-miniprogram-res-static.oss-cn-shanghai.aliyuncs.com/shortvideo/authoricons/11405dc79ed482afcef1a8961d1aa760.jpeg',
         id: 2,
         cover: 'https://wechart-miniprogram-res-static.oss-cn-shanghai.aliyuncs.com/shortvideo/covers/1062a948f5328771ec981bde1183c5a.jpeg',
         url: 'https://wechart-miniprogram-res.oss-cn-shanghai.aliyuncs.com/shortvideo/videos/5873b2d55bc6265beb945c2549c50d7.mp4?OSSAccessKeyId=LTAINaTr6dvDeEfe&Expires=1553439619&Signature=P67Rd%2FfLo5ReCCSwalJhtpx8%2B%2Fw%3D',
@@ -69,8 +84,7 @@ Page({
   onReady: function() {
     this.animation = wx.createAnimation()
     this.recommendtab = this.selectComponent("#recommendtab"); //组件的id
-
-    this.recommendtab.setComponentData(this.data.videobean)
+    this.recommendtab.setComponentData(this.data.videobean)   
   },
 
   /**
@@ -143,6 +157,7 @@ Page({
   },
 
   commentclick: function(e) {
+
     if (this.data.commentAttach) {
       this.hidecommentlist()
       return;

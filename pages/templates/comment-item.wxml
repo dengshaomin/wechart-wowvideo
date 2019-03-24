@@ -1,0 +1,9 @@
+<template name="commentitem">
+  <view class='comment_container'>
+    <image class='user_icon'></image>
+    <view class='name_content'>
+      <text class='user_name'>{{item}}</text>
+      <text class='content'>{{item}}</text>
+    </view>
+  </view>
+</template>

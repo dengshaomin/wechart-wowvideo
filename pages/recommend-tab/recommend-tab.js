@@ -27,6 +27,7 @@ Component({
     interval: 5000,
     duration: 1000,
     vertical: true,
+
   },
 
   /**
@@ -89,12 +90,20 @@ Component({
 
     },
     likeclick: function() {
-      this.data.videobean.likeCount += this.data.videobean.liked ? -1 : 1;
-      this.data.videobean.liked = this.data.videobean.liked == 1 ? 0 : 1;
+      this.data.videobean.videourls[this.data.playindex].likecount += this.data.videobean.videourls[this.data.playindex].liked ? -1 : 1;
+      this.data.videobean.videourls[this.data.playindex].liked = this.data.videobean.videourls[this.data.playindex].liked == 1 ? 0 : 1;
       this.setData({
         videobean: this.data.videobean
       });
     },
+    attentionclick: function() {
+      this.data.videobean.videourls[this.data.playindex].attentioncount += this.data.videobean.videourls[this.data.playindex].attentioned ? -1 : 1;
+      this.data.videobean.videourls[this.data.playindex].attentioned = this.data.videobean.videourls[this.data.playindex].attentioned == 1 ? 0 : 1;
+      this.setData({
+        videobean: this.data.videobean
+      });
+    },
+
     commentclick: function(e) {
       this.data.commentAttach = !this.data.commentAttach;
 
@@ -107,10 +116,10 @@ Component({
 
     },
     setComponentData: function(e) {
-
       this.setData({
-        videobean: e
+        videobean: e,
       })
+
     },
     bindtransition: function(e) {
       this.toolanimation.opacity(0).step()

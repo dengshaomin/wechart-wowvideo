@@ -1,3 +1,5 @@
+@import '../templates/comment-item.wxss';
+
 .swiper {
   flex: 1;
 }
@@ -6,8 +8,6 @@
   width: 100%;
   height: 100%;
 }
-
-
 
 .bottom_indicator {
   background: #fff;
@@ -30,7 +30,6 @@
   right: 0;
   margin: auto;
   display: flex;
-
   align-items: stretch;
 }
 
@@ -55,8 +54,6 @@
   flex-direction: column;
 }
 
-
-
 .comment_list_container {
   display: flex;
   position: absolute;
@@ -64,31 +61,55 @@
   height: 100%;
   margin: auto;
   bottom: -100%;
+  flex-direction: column;
   left: 0;
   right: 0;
   background: transparent;
+  justify-content: flex-end;
 }
 
-.comment_list {
+.comment_list_container_1 {
   display: flex;
   position: absolute;
   flex-direction: column;
   width: 100%;
   height: 70%;
-  margin: auto;
-  bottom: 0;
-  left: 0;
-  right: 0;
   background: white;
   border-top-left-radius: 30rpx;
   border-top-right-radius: 30rpx;
 }
 
 .comment_list_title {
-  position: absolute;
+  position: relative;
   padding: 20rpx;
   font-size: 30rpx;
-  align-self: center;
+  align-self: flex-start;
   text-align: center;
-  width: 80%;
+  font-weight: bold;
+  width: 100%;
+}
+
+.comment_list {
+  display: flex;
+  position: relative;
+  flex: 1;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.input_container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-direction: row;
+}
+
+.comment_input {
+  width: 100%;
+  height: 60rpx;
+}
+
+.comment_send {
+  width: 60rpx;
+  height: 60rpx;
 }

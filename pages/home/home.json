@@ -9,5 +9,5 @@
   "navigationBarTitleText": "WeChat",
   "navigationBarTextStyle": "white",
   "navigationStyle": "custom",
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": false
 }

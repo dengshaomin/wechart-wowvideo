@@ -1,6 +1,7 @@
 <!--miniprogram/custom-tab-bar/index.wxml-->
+<import src='../templates/comment-item.wxml' />
 <view class='root'>
-  <swiper class='swiper' bindtransition='bindtransition' bindanimationfinish='bindtransition' current='{{selected}}'>
+  <swiper class='swiper' bindtransition='bindtransition' bindanimationfinish='bindtransition' current='{{selected}}' skip-hidden-item-layout='true'>
     <swiper-item catchtouchmove="disableTabMove" bindtransition='bindtransition'>
       <recommend-component class='swiper-item' id='recommendtab' bindcommentclick='commentclick' bindcustomevent="customevent" />
       <attention-component class='swiper-item' id='attentiontab' bindcommentclick='commentclick' bindcustomevent="customevent" />
@@ -34,10 +35,19 @@
   </cover-view>
 
   <cover-view class='comment_list_container' animation="{{animation}}" bindtap='commentlistclick'>
-    <cover-view class='comment_list'>
 
+    <cover-view class='comment_list_container_1'>
       <cover-view class='comment_list_title'>1条评论</cover-view>
-
+      <scroll-view class='comment_list' scroll-y='{{true}}'>
+        <block wx:for="{{[1, 2, 3, 4, 5,1, 2, 3, 4, 5]}}">
+          <template is="commentitem" data="{{item}}" />
+        </block>
+      </scroll-view>
+      <view class='input_container'>
+        <input id='comment_input' class='comment_input' maxlength='30'></input>
+        <view class='comment_send' />
+      </view>
     </cover-view>
   </cover-view>
+
 </view>
