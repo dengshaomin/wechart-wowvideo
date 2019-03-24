@@ -1,11 +1,5 @@
 /**index.wxss**/
 
-.root_container {
-  display: flex;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
 
 .video_container {
   display: flex;
@@ -13,6 +7,9 @@
   width: 100%;
   height: 100%;
   justify-content: center;
+}
+
+.tool_container {
 }
 
 .swiper {
@@ -29,9 +26,9 @@
 }
 
 .slide_image {
+  position: absolute;
   width: 100%;
   height: 100%;
-  background: #000;
 }
 
 .center_play_control {
@@ -60,9 +57,9 @@
   width: 70%;
   padding-left: 20rpx;
   position: absolute;
-  align-self: flex-end;
-  padding-bottom: 100rpx;
   flex-direction: column;
+  margin: auto;
+  bottom: 200rpx;
 }
 
 .h_bottom_name {
@@ -94,10 +91,8 @@
 .v_tool_user_icon {
   width: 80rpx;
   height: 80rpx;
-  border-width: 5prx;
-  background: white;
-  border-radius: 82rpx;
-  border: 0 solid #fe0;
+  border-radius: 100rpx;
+  border: 5rpx solid white;
   margin-bottom: 50rpx;
 }
 
@@ -124,11 +119,9 @@
   align-items: center;
   background: transparent;
   padding-bottom: 50rpx;
-  }
+}
 
 .v_tool_text {
   font-size: 25rpx;
   color: white;
 }
-
-

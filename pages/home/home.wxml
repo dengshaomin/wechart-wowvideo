@@ -1,10 +1,26 @@
 <!--miniprogram/custom-tab-bar/index.wxml-->
-<view class='container'>
-  <swiper class='swiper' bindtransition='bindtransition' bindanimationfinish='bindtransition'>
+<view class='root'>
+  <swiper class='swiper' bindtransition='bindtransition' bindanimationfinish='bindtransition' current='{{selected}}'>
     <swiper-item catchtouchmove="disableTabMove" bindtransition='bindtransition'>
       <recommend-component class='swiper-item' id='recommendtab' bindcommentclick='commentclick' bindcustomevent="customevent" />
+      <attention-component class='swiper-item' id='attentiontab' bindcommentclick='commentclick' bindcustomevent="customevent" />
+      <message-component class='swiper-item' id='messagetab' bindcommentclick='commentclick' bindcustomevent="customevent" />
+      <mine-component class='swiper-item' id='minetab' bindcommentclick='commentclick' bindcustomevent="customevent" />
     </swiper-item>
+    <swiper-item catchtouchmove="disableTabMove" bindtransition='bindtransition'>
 
+      <attention-component class='swiper-item' id='attentiontab' bindcommentclick='commentclick' bindcustomevent="customevent" />
+
+    </swiper-item>
+    <swiper-item catchtouchmove="disableTabMove" bindtransition='bindtransition'>
+
+      <message-component class='swiper-item' id='messagetab' bindcommentclick='commentclick' bindcustomevent="customevent" />
+
+    </swiper-item>
+    <swiper-item catchtouchmove="disableTabMove" bindtransition='bindtransition'>
+
+      <mine-component class='swiper-item' id='minetab' bindcommentclick='commentclick' bindcustomevent="customevent" />
+    </swiper-item>
   </swiper>
 
 

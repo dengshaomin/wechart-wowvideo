@@ -9,7 +9,7 @@ Component({
   lifetimes: {
     attached() {
       this.commentAttach = false;
-
+      this.toolanimation = wx.createAnimation()
     },
     detached() {
       // 在组件实例被从页面节点树移除时执行
@@ -19,10 +19,9 @@ Component({
    * 组件的初始数据
    */
   data: {
-
     playindex: 0,
-    isplaying: false,
-    videoBean: null,
+    isplaying: true,
+    videobean: null,
     indicatorDots: false,
     autoplay: false,
     interval: 5000,
@@ -38,14 +37,25 @@ Component({
       var videoContext = wx.createVideoContext(this.data.playindex + "", this);
       videoContext.pause();
       videoContext.seek(0);
-      videoContext = wx.createVideoContext(e.detail.current + "");
-      // setTimeout(function() {
-      videoContext.play()
-      // }, 200);
+      videoContext = wx.createVideoContext(e.detail.current + "", this);
+      setTimeout(function() {
+        videoContext.play()
+      }, 200);
 
       this.setData({
         playindex: e.detail.current
       });
+    },
+    bindplay: function(e) {
+
+
+      for (let i = 0; i < this.data.videobean.videourls.length; i++) {
+        this.data.videobean.videourls[i].isplaying = i == this.data.playindex;
+      }
+      this.setData({
+        videobean: this.data.videobean,
+        isplaying: true
+      })
     },
     videoSignalTab: function(e) {
       if (this.data.commentAttach) {
@@ -64,14 +74,8 @@ Component({
         videoContext.play();
       }
     },
-    videoPlay: function() {
 
-      this.setData({
-        isplaying: true
-      });
-    },
-    videoPause: function() {
-
+    bindpause: function() {
       this.setData({
         isplaying: false
       });
@@ -81,17 +85,17 @@ Component({
     //     wx.stopPullDownRefresh();
     //   }, 2000);
     // },
-    iconClick: function() {
+    iconclick: function() {
 
     },
-    likeClick: function() {
-      this.data.videoBean.likeCount += this.data.videoBean.liked ? -1 : 1;
-      this.data.videoBean.liked = this.data.videoBean.liked == 1 ? 0 : 1;
+    likeclick: function() {
+      this.data.videobean.likeCount += this.data.videobean.liked ? -1 : 1;
+      this.data.videobean.liked = this.data.videobean.liked == 1 ? 0 : 1;
       this.setData({
-        videoBean: this.data.videoBean
+        videobean: this.data.videobean
       });
     },
-    commentClick: function(e) {
+    commentclick: function(e) {
       this.data.commentAttach = !this.data.commentAttach;
 
       this.triggerEvent('commentclick', {
@@ -103,11 +107,25 @@ Component({
 
     },
     setComponentData: function(e) {
-      this.setData({
-        videoBean: e
-      })
-    }
 
+      this.setData({
+        videobean: e
+      })
+    },
+    bindtransition: function(e) {
+      this.toolanimation.opacity(0).step()
+      this.setData({
+        toolanimation: this.toolanimation.export(),
+
+      })
+    },
+    bindanimationfinish: function(e) {
+      this.toolanimation.opacity(1).step()
+      this.setData({
+        toolanimation: this.toolanimation.export(),
+
+      })
+    },
 
   },
 

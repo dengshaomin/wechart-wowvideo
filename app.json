@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/recommend/recommend",
+    
     "pages/logs/logs",
     "pages/flex/flex"
   ],

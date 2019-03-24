@@ -1,0 +1,4 @@
+<!--pages/attention-tab/attention-tab.wxml-->
+<view class='root_container'>
+  <text class='text'>pages/attention-tab/attention-tab.wxml</text>
+</view>

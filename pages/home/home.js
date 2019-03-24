@@ -7,7 +7,7 @@ Page({
   data: {
     commentAttach: false,
     selected: 0,
-    color: "#7e7e7e",
+    color: "#bbb",
     selectedColor: "#fff",
     tablist: [{
       pagePath: "/recommend-tab/recommend-tab",
@@ -26,24 +26,32 @@ Page({
 
       text: "我的"
     }],
-  
-    videoBean: {
+
+    videobean: {
       liked: 0,
-      commentCount: 0,
-      likeCount: 0,
-      shareCount: 0,
-      videoUrls: [{
+      commentcount: 0,
+      likecount: 0,
+      sharecount: 0,
+
+      usericon: 'https://wechart-miniprogram-res-static.oss-cn-shanghai.aliyuncs.com/shortvideo/authoricons/11405dc79ed482afcef1a8961d1aa760.jpeg',
+      videourls: [{
         id: 0,
+        cover: 'https://wechart-miniprogram-res-static.oss-cn-shanghai.aliyuncs.com/shortvideo/covers/1062a948f5328771ec981bde1183c5a.jpeg',
         url: 'http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400',
-        autoplay: false
+        autoplay: true,
+        isplaying: true,
       }, {
         id: 1,
-        url: 'https://wechart-miniprogram-res.oss-cn-shanghai.aliyuncs.com/shortvideo/videos/1bc0d0764f92786699cc416d9f8d7ef.mp4?OSSAccessKeyId=LTAINaTr6dvDeEfe&Expires=1553000743&Signature=S4wrAFbs5anxIyCCWeTATM%2B%2F4r8%3D',
-        autoplay: false
+        cover: 'https://wechart-miniprogram-res-static.oss-cn-shanghai.aliyuncs.com/shortvideo/covers/1062a948f5328771ec981bde1183c5a.jpeg',
+        url: 'https://wechart-miniprogram-res.oss-cn-shanghai.aliyuncs.com/shortvideo/videos/575de9b288ce3eecfc2344617314f17.mp4?OSSAccessKeyId=LTAINaTr6dvDeEfe&Expires=1553439594&Signature=dOa3VQTcUMkpgjjCdt8J%2B0nZ4yA%3D',
+        autoplay: false,
+        isplaying: false,
       }, {
         id: 2,
-        url: 'https://wechart-miniprogram-res.oss-cn-shanghai.aliyuncs.com/shortvideo/videos/2d4625f6155ff7187c366280d6abcda6.mp4?OSSAccessKeyId=LTAINaTr6dvDeEfe&Expires=1553000755&Signature=SUJT6%2FmCecSifm99uriL%2BRdL6%2F4%3D',
-        autoplay: false
+        cover: 'https://wechart-miniprogram-res-static.oss-cn-shanghai.aliyuncs.com/shortvideo/covers/1062a948f5328771ec981bde1183c5a.jpeg',
+        url: 'https://wechart-miniprogram-res.oss-cn-shanghai.aliyuncs.com/shortvideo/videos/5873b2d55bc6265beb945c2549c50d7.mp4?OSSAccessKeyId=LTAINaTr6dvDeEfe&Expires=1553439619&Signature=P67Rd%2FfLo5ReCCSwalJhtpx8%2B%2Fw%3D',
+        autoplay: false,
+        isplaying: false,
       }]
     }
   },
@@ -61,7 +69,8 @@ Page({
   onReady: function() {
     this.animation = wx.createAnimation()
     this.recommendtab = this.selectComponent("#recommendtab"); //组件的id
-    this.recommendtab.setComponentData(this.data.videoBean)
+
+    this.recommendtab.setComponentData(this.data.videobean)
   },
 
   /**
@@ -115,11 +124,9 @@ Page({
       }
     })
     return {
-      title: "转发的标题", // 小程序的名称
+      title: this.data.videobean.videourls[this.data.selected].des, // 小程序的名称
       path: '/pages/home/home?video_id=12345', // 默认是当前页面，必须是以‘/’开头的完整路径
-      imgUrl: 'https://sponsor-static.segmentfault.com/8552c525b1f77f394dc07b64cd71cf11.png', //自定义图片路径，支持PNG及JPG，不传入 imageUrl 则使用默认截图。显示图片长宽比是 5:4
-
-
+      imageUrl: this.data.videobean.videourls[this.data.selected].cover, //自定义图片路径，支持PNG及JPG，不传入 imageUrl 则使用默认截图。显示图片长宽比是 5:4
     };
   },
   switchTab: function(e) {

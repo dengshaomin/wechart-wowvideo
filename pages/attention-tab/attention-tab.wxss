@@ -1,0 +1,7 @@
+/* pages/attention-tab/attention-tab.wxss */
+
+.text {
+  width: 100%;
+  height: 100%;
+  color: white;
+}
