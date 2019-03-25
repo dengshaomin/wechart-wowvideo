@@ -1,4 +1,17 @@
 <!--pages/attention-tab/attention-tab.wxml-->
+<import src='../templates/attention-item.wxml' />
+
 <view class='root_container'>
-  <text class='text'>pages/attention-tab/attention-tab.wxml</text>
+
+  <text class='title'>关注</text>
+
+  <view class='content_container'>
+    <scroll-view wx:if='{{pagestate == 1}}' class='scrollview'>
+      <block wx:for="{{attentionlist}}">
+        <template is="attentiontitem" data="{{item}}" />
+      </block>
+    </scroll-view>
+    <image wx:if='{{pagestate == 2}}' class='empty_view' src='../../res/bg_empty.png'></image>
+    <loading-component wx:if='{{pagestate == 0}}' />
+  </view>
 </view>

@@ -1,2 +1,5 @@
 <!--pages/message-tab/message-tab.wxml-->
-<text>pages/message-tab/message-tab.wxml</text>
+
+<view class='root_container'>
+  <loading-component/>
+</view>

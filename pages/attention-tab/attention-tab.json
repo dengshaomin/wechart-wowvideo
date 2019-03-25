@@ -1,6 +1,8 @@
 {
   "component": true,
-  "usingComponents": {},
+  "usingComponents": {
+    "loading-component": "../loading-view/loading-view"
+  },
   "backgroundTextStyle": "dark",
   "navigationBarTitleText": "WeChat",
   "navigationBarTextStyle": "white",

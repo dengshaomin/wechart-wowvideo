@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "loading-component": "../loading-view/loading-view"
+  }
 }

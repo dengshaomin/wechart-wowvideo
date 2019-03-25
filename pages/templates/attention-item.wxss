@@ -1,0 +1,23 @@
+.attentiontitem {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding-top: 50rpx;
+  margin: 40rpx;
+}
+
+.user_icon {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 100rpx;
+  border: 5rpx solid white;
+  
+}
+
+.user_name {
+  margin-left: 40rpx;
+  display: flex;
+  flex: 1;
+  font-size: 30rpx;
+  color: white;
+}

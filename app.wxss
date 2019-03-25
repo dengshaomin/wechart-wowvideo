@@ -6,8 +6,10 @@
   width: 100%;
   height: 100%;
   flex-direction: column;
-  background: #000;
+ 
+  background: black;
 }
+
 .tab_container {
   display: flex;
   position: absolute;
@@ -19,3 +21,5 @@
 .hide {
   display: none;
 }
+
+
