@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class='tab_container'>
+<view class='root_container'>
 
   <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange='swiperChange' bindtransition='bindtransition' bindanimationfinish='bindanimationfinish'
     skip-hidden-item-layout='true'>
@@ -44,4 +44,6 @@
       <text class='h_bottom_des '>@des</text>
     </view>
   </view>
+
+  <loading-component pagestate='{{pagestate}}' />
 </view>

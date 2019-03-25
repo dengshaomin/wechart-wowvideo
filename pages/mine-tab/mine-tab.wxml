@@ -1,2 +1,9 @@
-<!--pages/mine-tab/mine-tab.wxml-->
-<text>pages/mine-tab/mine-tab.wxml</text>
+<!--pages/attention-tab/attention-tab.wxml-->
+
+
+<view class='root_container'>
+  <text class='title'>我的</text>
+  <view class='content_container'>
+    <image class='empty_view' src='../../res/bg_empty.png'></image>
+  </view>
+</view>

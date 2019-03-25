@@ -30,6 +30,12 @@ Component({
     }, {
       usericon: 'https://wechart-miniprogram-res-static.oss-cn-shanghai.aliyuncs.com/shortvideo/authoricons/11405dc79ed482afcef1a8961d1aa760.jpeg',
       name: '3'
+    }, , {
+      usericon: 'https://wechart-miniprogram-res-static.oss-cn-shanghai.aliyuncs.com/shortvideo/authoricons/11405dc79ed482afcef1a8961d1aa760.jpeg',
+      name: '3'
+    }, , {
+      usericon: 'https://wechart-miniprogram-res-static.oss-cn-shanghai.aliyuncs.com/shortvideo/authoricons/11405dc79ed482afcef1a8961d1aa760.jpeg',
+      name: '6'
     }]
   },
 

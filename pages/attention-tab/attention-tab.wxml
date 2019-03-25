@@ -6,12 +6,11 @@
   <text class='title'>关注</text>
 
   <view class='content_container'>
-    <scroll-view wx:if='{{pagestate == 1}}' class='scrollview'>
+    <scroll-view wx:if='{{pagestate == 1}}' class='scrollview' scroll-y='{{true}}'>
       <block wx:for="{{attentionlist}}">
         <template is="attentiontitem" data="{{item}}" />
       </block>
     </scroll-view>
-    <image wx:if='{{pagestate == 2}}' class='empty_view' src='../../res/bg_empty.png'></image>
-    <loading-component wx:if='{{pagestate == 0}}' />
+    <loading-component pagestate='{{pagestate}}' />
   </view>
 </view>

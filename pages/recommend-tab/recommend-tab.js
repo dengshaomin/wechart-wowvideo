@@ -19,6 +19,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+    pagestate: 0, //0:loading 1:success 2:error
     playindex: 0,
     isplaying: true,
     videobean: null,
@@ -41,7 +42,7 @@ Component({
       videoContext = wx.createVideoContext(e.detail.current + "", this);
       setTimeout(function() {
         videoContext.play()
-      }, 200);
+      }, 1000);
 
       this.setData({
         playindex: e.detail.current
@@ -81,11 +82,12 @@ Component({
         isplaying: false
       });
     },
-    // onPullDownRefresh: function() {
-    //   setTimeout(function() {
-    //     wx.stopPullDownRefresh();
-    //   }, 2000);
-    // },
+    onPullDownRefresh: function() {
+      console.log('1111')
+      setTimeout(function() {
+        wx.stopPullDownRefresh();
+      }, 2000);
+    },
     iconclick: function() {
 
     },
@@ -135,7 +137,7 @@ Component({
 
       })
     },
-
+  
   },
 
 })

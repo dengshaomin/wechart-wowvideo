@@ -1,7 +1,10 @@
 <!--pages/loading-view/loading-view.wxml-->
-<view class='loading_box'>
+<view class='root_container' wx:if='{{pagestate != 1}}'>
+  <view class='loading_box' wx:if='{{pagestate == 0}}'>
     <view class="pulse pulse_1"></view>
     <view class="pulse pulse_2"></view>
     <view class="pulse pulse_3"></view>
     <view class="pulse pulse_4"></view>
   </view>
+  <image wx:if='{{pagestate == 2}}' class='empty_view' src='../../res/bg_empty.png'></image>
+</view>

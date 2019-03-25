@@ -10,23 +10,24 @@ Page({
     color: "#bbb",
     selectedColor: "#fff",
     tablist: [{
-      pagePath: "/recommend-tab/recommend-tab",
+        pagePath: "/recommend-tab/recommend-tab",
 
-      text: "推荐"
-    }, {
-      pagePath: "/attention-tab/attention-tab",
+        text: "推荐"
+      }, {
+        pagePath: "/attention-tab/attention-tab",
 
-      text: "关注"
-    }, {
-      pagePath: "/attention-tab/attention-tab",
+        text: "关注"
+      }
+      // , {
+      //   pagePath: "/attention-tab/attention-tab",
 
-      text: "消息"
-    }, {
-      pagePath: "/attention-tab/attention-tab",
+      //   text: "消息"
+      // }, {
+      //   pagePath: "/attention-tab/attention-tab",
+      //   text: "我的"
+      // }
+    ],
 
-      text: "我的"
-    }],
-    
     videobean: {
       videourls: [{
         liked: 0,
@@ -84,7 +85,7 @@ Page({
   onReady: function() {
     this.animation = wx.createAnimation()
     this.recommendtab = this.selectComponent("#recommendtab"); //组件的id
-    this.recommendtab.setComponentData(this.data.videobean)   
+    this.recommendtab.setComponentData(this.data.videobean)
   },
 
   /**

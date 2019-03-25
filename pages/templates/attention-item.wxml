@@ -1,6 +1,6 @@
 <template name="attentiontitem">
   <view class='attentiontitem'>
     <image class='user_icon'></image>
-    <text class='user_name'>{{item}}</text>
+    <text class='user_name'>{{item.name}}</text>
   </view>
 </template>
