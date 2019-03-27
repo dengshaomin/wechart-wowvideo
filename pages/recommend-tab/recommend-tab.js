@@ -10,6 +10,7 @@ Component({
     attached() {
       this.commentAttach = false;
       this.toolanimation = wx.createAnimation()
+      var app = getApp()
     },
     detached() {
       // 在组件实例被从页面节点树移除时执行
@@ -19,6 +20,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     pagestate: 0, //0:loading 1:success 2:error
     playindex: 0,
     isplaying: true,
@@ -83,7 +85,7 @@ Component({
       });
     },
     onPullDownRefresh: function() {
-      console.log('1111')
+
       setTimeout(function() {
         wx.stopPullDownRefresh();
       }, 2000);
@@ -91,20 +93,30 @@ Component({
     iconclick: function() {
 
     },
-    likeclick: function() {
+    likeclick: function(e) {
+      if (e.detail.userInfo == null && getApp().globalData.userInfo == null) return;
+      if (getApp().globalData.userInfo == null) {
+        getApp().globalData.userInfo = e.detail.userInfo;
+      }
       this.data.videobean.videourls[this.data.playindex].likecount += this.data.videobean.videourls[this.data.playindex].liked ? -1 : 1;
       this.data.videobean.videourls[this.data.playindex].liked = this.data.videobean.videourls[this.data.playindex].liked == 1 ? 0 : 1;
       this.setData({
         videobean: this.data.videobean
       });
     },
-    attentionclick: function() {
+
+    attentionclick: function(e) {
+      if (e.detail.userInfo == null && getApp().globalData.userInfo == null) return;
+      if (getApp().globalData.userInfo == null) {
+        getApp().globalData.userInfo = e.detail.userInfo;
+      }
       this.data.videobean.videourls[this.data.playindex].attentioncount += this.data.videobean.videourls[this.data.playindex].attentioned ? -1 : 1;
       this.data.videobean.videourls[this.data.playindex].attentioned = this.data.videobean.videourls[this.data.playindex].attentioned == 1 ? 0 : 1;
       this.setData({
         videobean: this.data.videobean
       });
     },
+
 
     commentclick: function(e) {
       this.data.commentAttach = !this.data.commentAttach;
@@ -137,7 +149,10 @@ Component({
 
       })
     },
-  
+    bindtouchstart:function(e){
+      console.log('bindtouchstart')
+    }
+
   },
 
 })

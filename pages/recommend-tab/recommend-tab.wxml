@@ -2,7 +2,7 @@
 <view class='root_container'>
 
   <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange='swiperChange' bindtransition='bindtransition' bindanimationfinish='bindanimationfinish'
-    skip-hidden-item-layout='true'>
+    skip-hidden-item-layout='true' bindtouchstart='bindtouchstart'>
     <block wx:for="{{videobean.videourls}}">
       <swiper-item class='swiper-item'>
 
@@ -22,7 +22,7 @@
         <image class='v_tool_user_icon' src='{{videobean.videourls[playindex].usericon}}' />
       </button>
 
-      <button class='v_tool_item' bindtap='likeclick'>
+      <button class='v_tool_item' open-type="getUserInfo" bindgetuserinfo="likeclick">
         <image class='v_tool_icon' src="{{videobean.videourls[playindex].liked ==1 ? '../../res/icon_liked.png': '../../res/icon_like.png'}}"></image>
         <text class='v_tool_text '>{{videobean.videourls[playindex].likecount}}</text>
       </button>
@@ -30,7 +30,7 @@
         <image class='v_tool_icon ' src='../../res/icon_comment.png '></image>
         <text class='v_tool_text '>{{videobean.videourls[playindex].commentcount}}</text>
       </button>
-      <button class='v_tool_item' bindtap='attentionclick'>
+      <button class='v_tool_item' open-type="getUserInfo" bindgetuserinfo='attentionclick'>
         <image class='v_tool_icon' src="{{videobean.videourls[playindex].attentioned ==1 ? '../../res/icon_attentioned.png': '../../res/icon_attention.png'}}"></image>
         <text class='v_tool_text '>{{videobean.videourls[playindex].attentioncount}}</text>
       </button>
@@ -39,8 +39,8 @@
         <text class='v_tool_text '>{{videobean.videourls[playindex].sharecount}}</text>
       </button>
     </view>
-    <view class='h_bottom_info '>
-      <text class='h_bottom_name ' bindtap=' iconclick '>@name</text>
+    <view class='h_bottom_info'>
+      <text class='h_bottom_name ' bindtap=' iconclick'>@name</text>
       <text class='h_bottom_des '>@des</text>
     </view>
   </view>
