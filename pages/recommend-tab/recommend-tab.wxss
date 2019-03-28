@@ -63,7 +63,8 @@
 
 .h_bottom_info {
   display: flex;
-  width: 70%;
+  flex: 1;
+  max-width: 70%;
   position: absolute;
   flex-direction: column;
   margin: auto;
